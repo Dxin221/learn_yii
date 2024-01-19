@@ -244,6 +244,7 @@ function t($category,$message,$params=array())
 	if(isset($messages[$message]) && $messages[$message] !== '')
 		$message=$messages[$message];
 
+   /*它检查$params是否不等于空数组，如果是，则使用strtr函数将$message中的指定字符替换为$params中的对应字符，并返回结果；如果不是，则返回$message。*/
 	return $params !== array() ? strtr($message,$params) : $message;
 }
 
