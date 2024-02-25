@@ -158,11 +158,15 @@ abstract class CApplication extends CModule
 			unset($config['aliases']);
 		}
 
+        //预初始化模块
 		$this->preinit();
 
+        //初始化错误处理程序
 		$this->initSystemHandlers();
+        //注册核心组件
 		$this->registerCoreComponents();
 
+        //配置指定模块
 		$this->configure($config);
 		$this->attachBehaviors($this->behaviors);
 		$this->preloadComponents();
